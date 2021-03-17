@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Functions: Task 1</title>
+    <style>
+    </style>
+  </head>
+
+  <body>
+    <script>
+    
+    const values1 = ["Rock", "Paper", "Scissor"];
+    const computerSelection = test();
+    const user = "Paper";
+
+      function test(){
+        let random = Math.floor(Math.random() * values1.length);
+        return  random, values1[random];
+      }
+      
+      function bothPlay(user, computerSelection){
+        
+        if ((user == "Rock" && computerSelection== "Rock") || (user == "Paper" && computerSelection== "Paper") || (user == "Scissor" && computerSelection== "Scissor") ){
+          return "Gleichstand, ihr beide habt das Gleiche!"
+        }else if((user == "Rock") && (computerSelection == "Paper")){
+          return "You win! Paper beats Rock!"
+        } else if((user == "Rock") && (computerSelection == "Scissor")){
+          return "You win! Scissor beats ROck!"
+        }else if((user == "Paper") && (computerSelection == "Rock")){
+          return "YOu win! Paper beats Rock!"
+        }else if((user == "Paper") && (computerSelection == "Scissor")){
+          return "You win! Scissor beats Paper!"
+        }else if((user == "Scissor") && (computerSelection == "Rock")){
+          return "You win! Rock beats Scissor!"
+        }else {
+          return "blah";
+        }
+        
+        
+      }
+
+      function game(){
+        for (i = 0; i < 5; i++){
+         console.log(bothPlay(user, computerSelection));
+        }
+
+      }
+
+
+
+    </script>
+
+  </body>
+ 
+</html>
