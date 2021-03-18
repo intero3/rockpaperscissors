@@ -15,41 +15,57 @@
     const computerSelection = test();
     let user;
 
+
       function test(){
         let random = Math.floor(Math.random() * values1.length);
         return  random, values1[random];
       }
       
       function bothPlay(user, computerSelection){
-        prompt("What do you choose?", "");
+        user = prompt("What do you choose?", "");
         if ((user == "Rock" && computerSelection== "Rock") || (user == "Paper" && computerSelection== "Paper") || (user == "Scissor" && computerSelection== "Scissor") ){
           return "Nobody wins here!"
         }else if((user == "Rock") && (computerSelection == "Paper")){
-          return "You win! Paper beats Rock!"
+          return "Computer wins! Paper beats Rock!"
         } else if((user == "Rock") && (computerSelection == "Scissor")){
-          return "You win! Scissor beats ROck!"
-        }else if((user == "Paper") && (computerSelection == "Rock")){
-          return "YOu win! Paper beats Rock!"
-        }else if((user == "Paper") && (computerSelection == "Scissor")){
-          return "You win! Scissor beats Paper!"
-        }else if((user == "Scissor") && (computerSelection == "Rock")){
           return "You win! Rock beats Scissor!"
+        }else if((user == "Paper") && (computerSelection == "Rock")){
+          return "You win! Paper beats Rock!"
+        }else if((user == "Paper") && (computerSelection == "Scissor")){
+          return "Computer wins! Scissor beats Paper!"
+        }else if((user == "Scissor") && (computerSelection == "Rock")){
+          return "Computer wins! Rock beats Scissor!"
         }else {
-          return "YOu Win Paper beats Rock!";
+          return "You win! Paper beats Rock!";
         }
         
         
       }
 
-       
+      function gameober(){
+        let playerScore = 0;
+        let computerScore = 0;
+        let ConsoleOutput;
 
-
-        function gameober(){
-          for (i=0; i<5; i++){
-            console.log(bothPlay(user, test()))
+        for (let i=0; i<5; i++){
+          consoleOutput = console.log(bothPlay(user, test()));
+          if (consoleOutput === "You win! Rock beats Scissor!" ||
+              consoleOutput === "You win! Paper beats Rock!" ||
+              consoleOutput === "You win! Scissor beats Paper!"){
+                ++playerScore;
+          }else{
+                ++computerScore;
           }
         }
 
+        if(playerScore > computerScore){
+          console.log("You win!")
+        }else if(computerScore > playerScore){
+          console.log("You lose!")
+        }else{
+          console.log("It's a tie!")
+        }
+      }
 
 
     </script>
