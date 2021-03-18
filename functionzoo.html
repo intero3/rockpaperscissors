@@ -23,7 +23,7 @@
       function bothPlay(user, computerSelection){
         
         if ((user == "Rock" && computerSelection== "Rock") || (user == "Paper" && computerSelection== "Paper") || (user == "Scissor" && computerSelection== "Scissor") ){
-          return "Gleichstand, ihr beide habt das Gleiche!"
+          return "Nobody wins here!"
         }else if((user == "Rock") && (computerSelection == "Paper")){
           return "You win! Paper beats Rock!"
         } else if((user == "Rock") && (computerSelection == "Scissor")){
@@ -35,18 +35,20 @@
         }else if((user == "Scissor") && (computerSelection == "Rock")){
           return "You win! Rock beats Scissor!"
         }else {
-          return "blah";
+          return "YOu Win Paper beats Rock!";
         }
         
         
       }
 
-      function game(){
-        for (i = 0; i < 5; i++){
-         console.log(bothPlay(user, computerSelection));
-        }
+       
 
-      }
+
+        function gameober(){
+          for (i=0; i<5; i++){
+            console.log(bothPlay(user, test()))
+          }
+        }
 
 
 
