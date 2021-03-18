@@ -13,7 +13,7 @@
     
     const values1 = ["Rock", "Paper", "Scissor"];
     const computerSelection = test();
-    const user = "Paper";
+    let user;
 
       function test(){
         let random = Math.floor(Math.random() * values1.length);
@@ -21,7 +21,7 @@
       }
       
       function bothPlay(user, computerSelection){
-        
+        prompt("What do you choose?", "");
         if ((user == "Rock" && computerSelection== "Rock") || (user == "Paper" && computerSelection== "Paper") || (user == "Scissor" && computerSelection== "Scissor") ){
           return "Nobody wins here!"
         }else if((user == "Rock") && (computerSelection == "Paper")){
